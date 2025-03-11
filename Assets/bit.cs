@@ -2,27 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bit : MonoBehaviour
+public class Bit : MonoBehaviour
 {
-   SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
     public bool state = false;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        UpdateColor();
     }
-    void Update()
-    {
-        if (state)
-        {
-            spriteRenderer.color = Color.blue;
-        }
-        else
-        {
-            spriteRenderer.color = Color.red;
-        }
-    }
-    private void OnMouseUp()
+
+    void OnMouseDown()
     {
         state = !state;
+        UpdateColor();
+    }
+
+    void UpdateColor()
+    {
+        spriteRenderer.color = state ? Color.blue : Color.red;
     }
 }
