@@ -46,4 +46,9 @@ public class Byte : MonoBehaviour
         if (bits[6].state) { value += 64; }
         if (bits[7].state) { value += 128; }
     }
+    public string getHex()
+{
+    return value.ToString("X2"); // Altijd twee cijfers, bijv. "0F", "FF", etc.
+}
+
 }
